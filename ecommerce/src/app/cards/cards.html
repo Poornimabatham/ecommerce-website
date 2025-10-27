@@ -1,0 +1,67 @@
+<div class="row mt-4">
+    <div class="col-lg-3">
+        <button type="button" class="btn btn-primary" style="height: 40px; width: 1px; margin-right: 3px;"></button>
+        <p>Today's</p>
+    </div>
+    <div class="col-lg-3">
+        
+    </div>
+</div>
+
+<div class="row d-flex align-items-center py-3">
+    <!-- Left: Title -->
+    <div class="col-lg-2 d-flex justify-content-center">
+        <h3 class="mb-0 fw-bold">Flash Sales</h3>
+    </div>
+
+    <!-- Middle: Countdown -->
+    <div class="col-lg-4 d-flex justify-content-center">
+        <div class="d-flex text-center">
+            <div class="mx-3"><small>Days</small>
+
+                <h5 class="mb-0 fw-bold display-6">{{days}}:</h5>
+            </div>
+            <div class="mx-3"><small>Hours</small>
+
+                <p class="mb-0 fw-bold display-6">{{hours}}:</p>
+            </div>
+            <div class="mx-3"><small>Minutes</small>
+
+                <p class="mb-0 fw-bold display-6">{{minutes}}:</p>
+            </div>
+            <div class="mx-3"><small>Seconds</small>
+
+                <p class="mb-0 fw-bold display-6">{{seconds}}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right: Arrows -->
+    <div class="col-lg-6 d-flex justify-content-end align-items-center">
+        <button class="btn rounded-circle mx-2"
+            style="width:40px; height:40px; border:1px solid #ccc; background:#fff;">
+            <i class="fa-solid fa-angle-left"></i>
+        </button>
+        <button class="btn rounded-circle mx-2"
+            style="width:40px; height:40px; border:1px solid #ccc; background:#fff;">
+            <i class="fa-solid fa-angle-right"></i>
+        </button>
+    </div>
+</div>
+
+<div class="container-fluid"> <!-- Outer container for spacing -->
+    <div class="row justify-content-center"> <!-- Center the cards -->
+        <div class="col-lg-3 mb-4" *ngFor="let product of cards">
+            <div class="card" style="width: 15rem; height: 10rem; margin: auto;">
+                <img [src]="product.img" class="card-img-top" alt="{{product.title}}">
+                <div class="card-body">
+                    <h6 class="card-title">{{ product.title }}</h6>
+                    <p class="card-text">{{ product.price }}</p>
+                    <p>{{ product.star }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 

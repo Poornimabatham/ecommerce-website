@@ -1,0 +1,38 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="row w-75 ">
+
+        <!-- Left Side (Image) -->
+        <div class="col-md-6 d-none d-md-flex p-0">
+            <img src="https://i.pinimg.com/736x/68/2b/60/682b604d466185e1a2368aadd85c09cc.jpg" class="img-fluid w-100"
+                style="object-fit: cover; height: 70%; margin: auto;" alt="Left Image">
+        </div>
+
+        <!-- Right Side (Form) -->
+        <div class="col-md-6 p-5 d-flex flex-column justify-content-center">
+            <h2 class="mb-1">Create an account</h2>
+            <h5 class="mb-5">Enter your details below</h5>
+            <form>
+                <div class="form-group mt-4">
+                    <input type="text" class="form-control   input-underline" id="name" placeholder="Enter Name">
+                </div>
+
+                <div class="form-group mt-4">
+                    <input type="email" class="form-control  input-underline" id="email" placeholder="Email or Phone Number">
+                </div>
+
+                <div class="form-group mt-4">
+                    <input type="password" class="form-control  input-underline" id="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block mt-4">Submit</button>
+                <button type="submit" class=" btn btn-white  buttton btn-block mt-4"><i class="fab fa-google me-2"></i> <!-- Google icon -->
+                Sign in with Google</button>
+                <div class="d-flex flex-row ml-2 justify-content-center mt-3">
+                <p class="mr-2" >Alreay have account</p><a  routerLink="/login" >Log In</a>
+
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="d-flex vh-100">
+    <!-- Sidebar -->
+    <div [class.collapsed]="isSidebarCollapsed" class="bg-dark text-white p-3 sidebar flex-shrink-0">
+        <ul class="nav flex-column">
+            <li class="nav-item my-2">
+                <a class="nav-link text-white d-flex align-items-center" routerLink="/dashboard">
+                    <i class="fa-solid fa-house"></i>
+                    <span class="mx-2" *ngIf="!isSidebarCollapsed">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item my-2">
+                <a class="nav-link text-white d-flex align-items-center" routerLink="/users">
+                    <i class="fa-solid fa-users"></i>
+                    <span class="mx-2" *ngIf="!isSidebarCollapsed">Users</span>
+                </a>
+            </li>
+            <li class="nav-item my-2">
+                <a class="nav-link text-white d-flex align-items-center" routerLink="/settings">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class="mx-2" *ngIf="!isSidebarCollapsed">Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main content -->
+    <div class="flex-grow-1 d-flex flex-column main-content">
+        <!-- Navbar (sticky inside its component) -->
+        <app-navbar (toggleSidebar)="toggleSidebar()"></app-navbar>
+
+        <!-- Scrollable content -->
+        <div class="content flex-grow-1 overflow-auto p-4">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

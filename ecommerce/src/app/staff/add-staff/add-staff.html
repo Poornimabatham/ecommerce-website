@@ -1,0 +1,72 @@
+<div class="container mt-4">
+    <h2 class="mb-4 text-center text-primary">
+        {{ isEditMode ? 'Edit Staff' : 'Add Staff' }}
+    </h2>
+
+    <form [formGroup]="staffForm" (ngSubmit)="onSubmit()" class="p-4 border rounded shadow-sm bg-light">
+
+        <!-- Name -->
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" type="text" class="form-control" formControlName="name" placeholder="Enter staff name" />
+            <div class="text-danger small mt-1"
+                *ngIf="staffForm.get('name')?.invalid && staffForm.get('name')?.touched">
+                Name is required.
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" class="form-control" formControlName="email"
+                placeholder="Enter staff email" />
+            <div class="text-danger small mt-1"
+                *ngIf="staffForm.get('email')?.invalid && staffForm.get('email')?.touched">
+                Enter a valid email.
+            </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input id="phone" type="text" class="form-control" formControlName="phone"
+                placeholder="Enter staff phone" />
+            <div class="text-danger small mt-1"
+                *ngIf="staffForm.get('phone')?.invalid && staffForm.get('phone')?.touched">
+                Phone is required.
+            </div>
+        </div>
+
+        <!-- Role -->
+    <!-- Normal Role Dropdown -->
+<!-- Role dropdown -->
+<div class="form-group">
+    <label for="role">Role</label>
+    <select id="role" class="form-control" formControlName="role">
+        <option value="">Select role</option>
+        <option *ngFor="let role of roles" [value]="role._id">{{ role.name }}</option>
+    </select>
+</div>
+
+<!-- Manager Role dropdown -->
+<div class="form-group" *ngIf="showManagerDropdown">
+    <label for="managerRole">Manager Role</label>
+    <select id="managerRole" class="form-control" formControlName="managerRole">
+        <option value="">Select manager role</option>
+        <option *ngFor="let role of roles" [value]="role._id">{{ role.name }}</option>
+    </select>
+    <div class="text-danger small mt-1"
+        *ngIf="staffForm.get('managerRole')?.invalid && staffForm.get('managerRole')?.touched">
+        Manager role is required.
+    </div>
+</div>
+
+
+
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block">
+            {{ isEditMode ? 'Update Staff' : 'Add Staff' }}
+        </button>
+    </form>
+</div>

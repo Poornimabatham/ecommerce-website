@@ -1,0 +1,40 @@
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    z-index: 100;
+    background-color: #343a40;
+}
+
+.sidebar.collapsed {
+    width: 60px;
+}
+
+/* Main content */
+.main-content {
+    margin-left: 220px;
+    /* width of sidebar */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+      position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    
+}
+
+.sidebar.collapsed~.main-content {
+    margin-left: 60px;
+}
+
+/* Scrollable content */
+.content {
+    overflow-y: auto;
+    height: calc(100vh - 56px);
+    /* 56px = navbar height */
+}

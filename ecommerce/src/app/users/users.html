@@ -1,0 +1,42 @@
+<div class="container my-5">
+
+    <!-- Product Cards -->
+    <div class="row">
+        <div class="col-md-4 col-lg-3 mb-4" *ngFor="let product of paginatedProducts">
+            <div class="card h-100 shadow-sm">
+                <img *ngIf="product.images && product.images.length" [src]="product.images[0]" class="card-img-top"
+                    alt="{{ product.title }}" (error)="onImageError($event)" />
+                    
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ product.title }}</h5>
+                    <p class="card-text text-muted flex-grow-1">
+                        {{ product.description | slice:0:100 }}
+                        {{ product.description.length > 100 ? '...' : '' }}
+                    </p>
+                    <div class="mt-auto">
+                        <h6 class="fw-bold text-primary">₹{{ product.price }}</h6>
+                        <button class="btn btn-outline-primary btn-sm w-100 mt-2">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagination -->
+    <nav *ngIf="totalPages > 1" aria-label="Page navigation example" class="d-flex justify-content-center mt-4">
+        <ul class="pagination">
+            <li class="page-item" [class.disabled]="currentPage === 1">
+                <button class="page-link" (click)="setPage(currentPage - 1)">Previous</button>
+            </li>
+
+            <li class="page-item" *ngFor="let page of [].constructor(totalPages); let i = index"
+                [class.active]="currentPage === i + 1">
+                <button class="page-link" (click)="setPage(i + 1)">{{ i + 1 }}</button>
+            </li>
+
+            <li class="page-item" [class.disabled]="currentPage === totalPages">
+                <button class="page-link" (click)="setPage(currentPage + 1)">Next</button>
+            </li>
+        </ul>
+    </nav>
+</div>
