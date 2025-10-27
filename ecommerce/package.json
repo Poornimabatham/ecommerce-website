@@ -1,15 +1,14 @@
 {
   "name": "ecommerce",
   "version": "0.0.0",
-"scripts": {
-  "ng": "ng",
-  "start": "npx ng serve",
-  "build": "npx ng build --configuration production",
-  "vercel-build": "npm install @angular/cli && npx ng build --configuration production",
-  "watch": "npx ng build --watch --configuration development",
-  "test": "npx ng test"
-},
-
+  "scripts": {
+    "ng": "ng",
+    "start": "npx ng serve",
+    "build": "npx ng build --configuration production",
+    "vercel-build": "npm install @angular/cli && npx ng build --configuration production",
+    "watch": "npx ng build --watch --configuration development",
+    "test": "npx ng test"
+  },
   "prettier": {
     "printWidth": 100,
     "singleQuote": true,

@@ -1,0 +1,31 @@
+<div class="modal-header">
+    <h5 class="modal-title">{{ product?.title }}</h5>
+    <button type="button" class="btn-close" (click)="bsModalRef.hide()"><i class="fa-solid fa-xmark"></i>
+</button>
+</div>
+
+<div class="modal-body" *ngIf="product">
+    <div class="row">
+        <!-- Left column (Image) -->
+        <div class="col-md-4 text-center">
+            <img *ngIf="product.images?.length" [src]="product.images[0]" class="img-fluid rounded mb-3"
+                alt="{{ product.title }}" />
+        </div>
+
+        <!-- Right column (Info) -->
+        <div class="col-md-7">
+            <p><strong>Price:</strong> ₹{{ product.price }}</p>
+            <p><strong>Slug:</strong> {{ product.slug }}</p>
+            <p><strong>Created At:</strong> {{ product.creationAt | date:'medium' }}</p>
+            <p><strong>Updated At:</strong> {{ product.updatedAt | date:'medium' }}</p>
+            <hr>
+
+            <h6>Category Details</h6>
+            <p><strong>Name:</strong> {{ product.category?.name }}</p>
+            <p><strong>Slug:</strong> {{ product.category?.slug }}</p>
+            <p><strong>Created At:</strong> {{ product.category?.creationAt | date:'medium' }}</p>
+            <p><strong>Updated At:</strong> {{ product.category?.updatedAt | date:'medium' }}</p>
+            <hr>
+        </div>
+    </div>
+</div>
