@@ -37,4 +37,33 @@
     overflow-y: auto;
     height: calc(100vh - 56px);
     /* 56px = navbar height */
+}.contact-submenu {
+    list-style-type: disc;
+    /* show round bullets */
+    list-style-position: inside;
+    /* keep bullet + text in same line */
+    color: white;
+    /* bullet color (inherits to text if not overridden) */
+    margin-left: 15px;
+    /* small indent */
+    padding-left: 10px;
+}
+
+.contact-submenu li {
+    color: white;
+    /* makes bullets white */
+    margin: 4px 0;
+    /* spacing between items */
+}
+
+.contact-submenu li a {
+    color: white;
+    /* link text white */
+    text-decoration: none;
+    /* remove underline */
+}
+
+.contact-submenu li a:hover {
+    text-decoration: underline;
+    /* add underline on hover */
 }

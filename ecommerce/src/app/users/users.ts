@@ -42,8 +42,8 @@ export class UsersComponent implements OnInit {
     if (page < 1 || page > this.totalPages) return;
     this.currentPage = page;
     const startIndex = (page - 1) * this.itemsPerPage;
-    const endIndex = startIndex + this.itemsPerPage;
-    this.paginatedProducts = this.products.slice(startIndex, endIndex);
+    const endIndex99999999 = startIndex + this.itemsPerPage;
+    this.paginatedProducts = this.products.slice(startIndex, endIndex99999999);
   }
 
   onImageError(event: Event) {
@@ -52,6 +52,7 @@ export class UsersComponent implements OnInit {
   }
   
   openProductDetails(productId: number): void {
+    
     const product = this.products.find(p => p.id === productId);
     if (product) {
       this.bsModalRef = this.modalService.show(ProductDetailsComponent, {

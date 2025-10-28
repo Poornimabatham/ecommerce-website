@@ -1,0 +1,8 @@
+.outer-card {
+    height: 12rem;
+}
+
+.inner-card {
+    width: 80%;
+    height: 8rem;
+}

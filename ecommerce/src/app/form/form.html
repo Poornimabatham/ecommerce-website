@@ -1,0 +1,121 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card p-4 shadow-lg border-0" style="width: 900px; border-radius: 15px">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label class="form-label">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="firstName"
+            placeholder="Enter first name"
+          />
+          <div
+            class="text-danger"
+            *ngIf="contactForm.get('firstName')?.touched && contactForm.get('firstName')?.invalid"
+          >
+            First Name is required
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label">Middle Name</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="MiddleName"
+            placeholder="Enter middle name"
+          />
+          <div
+            class="text-danger"
+            *ngIf="contactForm.get('MiddleName')?.touched && contactForm.get('MiddleName')?.invalid"
+          >
+            Middle Name is required
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="lastName"
+            placeholder="Enter last name"
+          />
+          <div
+            class="text-danger"
+            *ngIf="contactForm.get('lastName')?.touched && contactForm.get('lastName')?.invalid"
+          >
+            Last Name is required
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            formControlName="email"
+            placeholder="Enter email"
+          />
+          <div
+            class="text-danger"
+            *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid"
+          >
+            Enter a valid email
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Phone</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="phone"
+            placeholder="Enter phone number"
+          />
+          <div
+            class="text-danger"
+            *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid"
+          >
+            Enter a valid 10-digit phone number
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Message</label>
+        <textarea
+          class="form-control"
+          rows="3"
+          formControlName="message"
+          placeholder="Your message"
+        ></textarea>
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label">Country</label>
+        <select class="form-select" formControlName="country">
+          <option value="" disabled selected>Select your country</option>
+          <option *ngFor="let country of countries" [value]="country.value">
+            {{ country.label }}
+          </option>
+        </select>
+        <div
+          class="text-danger"
+          *ngIf="contactForm.get('country')?.touched && contactForm.get('country')?.invalid"
+        >
+          Please select a country
+        </div>
+      </div>
+
+      <div class="text-end">
+        <button class="btn btn-primary px-4" type="submit" [disabled]="contactForm.invalid">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -18,4 +18,9 @@ export class App {
   toggleSidebar() {
     this.isSidebarCollapsed = !this.isSidebarCollapsed;
   }
+  showContactSubmenu = false; // 👈 submenu toggle variable
+
+  toggleContactSubmenu() {
+    this.showContactSubmenu = !this.showContactSubmenu;
+  }
 }

@@ -15,11 +15,49 @@
                 </a>
             </li>
             <li class="nav-item my-2">
+                <a class="nav-link text-white d-flex align-items-center" routerLink="/explore">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class="mx-2" *ngIf="!isSidebarCollapsed">explore</span>
+                </a>
+            </li>
+            <li class="nav-item my-2">
+                <a class="nav-link text-white d-flex align-items-center" routerLink="/form">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class="mx-2" *ngIf="!isSidebarCollapsed">Contact Us</span>
+                </a>
+            </li>
+            <li class="nav-item my-2">
                 <a class="nav-link text-white d-flex align-items-center" routerLink="/settings">
                     <i class="fa-solid fa-gear"></i>
                     <span class="mx-2" *ngIf="!isSidebarCollapsed">Settings</span>
                 </a>
             </li>
+        <li class="nav-item my-2">
+            <a class="nav-link text-white d-flex align-items-center justify-content-between" (click)="toggleContactSubmenu()"
+                style="cursor: pointer;">
+                <div class="d-flex align-items-center">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class="mx-2" *ngIf="!isSidebarCollapsed">Contact Us</span>
+                </div>
+                <i class="fa-solid" [ngClass]="showContactSubmenu ? 'fa-chevron-up' : 'fa-chevron-down'"
+                    *ngIf="!isSidebarCollapsed"></i>
+            </a>
+        
+            <!-- Submenu -->
+        <ul class="contact-submenu" *ngIf="showContactSubmenu && !isSidebarCollapsed">
+            <li>
+                <a href="https://wa.me/1234567890" target="_blank">WhatsApp</a>
+            </li>
+            <li>
+                <a href="https://twitter.com/" target="_blank">Twitter</a>
+            </li>
+            <li>
+                <a href="https://facebook.com/" target="_blank">Facebook</a>
+            </li>
+        </ul>
+
+        </li>
+
         </ul>
     </div>
 

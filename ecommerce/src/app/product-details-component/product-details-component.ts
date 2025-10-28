@@ -13,7 +13,14 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
   `]
 })
 export class ProductDetailsComponent {
-    @Input() product: any;
+  @Input() product: any;
+
+  
+
+
+
+
+  
   constructor(public bsModalRef: BsModalRef) {}
 
 }
